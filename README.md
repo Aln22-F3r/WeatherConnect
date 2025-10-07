@@ -1,2 +1,2 @@
 # WeatherConnect
-Aplicación web para consultar el clima usando Java y HTML consumiendo una API externa.
+Frontend de la pagina de WeatherConnect
