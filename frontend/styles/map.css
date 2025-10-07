@@ -1,0 +1,39 @@
+#map {
+    height: 500px;
+    width: 100%;
+    border: 3px solid #1e3a8a;
+    border-radius: 8px;
+}
+
+#getWeatherBtn {
+    display: block;
+    margin: 12px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #1a347c;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#getWeatherBtn:hover {
+    background-color: #213291;
+    transform: translateY(-1px);
+}
+
+#getWeatherBtn:active {
+    background-color: #0c1b65;
+    transform: translateY(0);
+}
+
+#info {
+    margin-bottom: 12px;
+    background-color: #353535;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
