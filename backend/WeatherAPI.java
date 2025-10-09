@@ -6,6 +6,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class WeatherAPI {
     public static void main(String[] args) {
         String apiKey = "5f1afc54ccc5cec288756eb86a9f518b";
@@ -34,8 +37,22 @@ public class WeatherAPI {
                 in.close();
                 connection.disconnect();
 
-                System.out.println("Datos JSON recibidos: ");
-                System.out.println(content.toString());
+                JSONObject json = new JSONObject(content.toString());
+
+                JSONObject main = json.getJSONObject("main");
+                JSONArray weatherArr = json.getJSONArray("weather");
+                JSONObject weather = weatherArr.getJSONObject(0);
+
+                double temp = main.getDouble("temp");
+                int humidity = main.getInt("humidity");
+                String description = weather.getString("description");
+                String city = json.getString("name");
+
+                System.out.println("Datos Climaticos");
+                System.out.println("Ciudad: " + city);
+                System.out.println("Temperatura: " + temp + "℃");
+                System.out.println("Humedad: " + humidity + "%");
+                System.out.println("Descripcion: " + description);
             } else {
                 System.out.println("Error al conectar: " + status);
             }
